@@ -1,0 +1,13 @@
+services:
+  clock-server:
+    image: python:alpine
+    working_dir: /clock
+    env_file:
+      - env
+    ports:
+      - 8123:80
+    volumes:
+      - .:/clock
+    command: >
+      sh -c "pip install --no-cache-dir -r requirements.txt
+      && uvicorn app.main:app --port 80 --host 0.0.0.0 --reload"

@@ -1,0 +1,154 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartDisplay</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/weather-icons.min.css">
+
+</head>
+<body>
+    <!-- Date & Current Weather -->
+    <div class="container">
+        <div class="box" id="clock-grid">
+            <div id="current-date"># Loading...</div>
+            <div id="current-time"># Loading...</div>
+        </div>
+        <div class="box right" id="current-weather-box">
+            <div id="current-weather">
+                <span id="current-weather-ico"><i class="wi wi-owm-day-500"></i></span>
+                <span id="current-temp">18.7°</span>
+            </div>
+            <div id="current-weather-feel">
+                <span>Feels Like:</span>
+                <span id="current-feels-like-temp">18.7°</span>
+            </div>
+        </div>
+    </div>
+    <!-- Weather Forecast Hourly -->
+    <div class="container" id="weather-forecast-hourly">
+        <div class="box">
+            <div class="weather-forecast-hourly">20:00</div>
+            <div class="weather-forecast-hourly">1°</div>
+            <div class="weather-forecast-hourly"><i class="wi wi-owm-day-500"></i></div>
+        </div>
+        <div class="box">
+            <div class="weather-forecast-hourly">20:00</div>
+            <div class="weather-forecast-hourly">1°</div>
+            <div class="weather-forecast-hourly"><i class="wi wi-owm-day-500"></i></div>
+        </div>
+        <div class="box">
+            <div class="weather-forecast-hourly">20:00</div>
+            <div class="weather-forecast-hourly">1°</div>
+            <div class="weather-forecast-hourly"><i class="wi wi-owm-day-500"></i></div>
+        </div>
+        <div class="box">
+            <div class="weather-forecast-hourly">20:00</div>
+            <div class="weather-forecast-hourly">1°</div>
+            <div class="weather-forecast-hourly"><i class="wi wi-owm-day-500"></i></div>
+        </div>
+        <div class="box">
+            <div class="weather-forecast-hourly">20:00</div>
+            <div class="weather-forecast-hourly">1°</div>
+            <div class="weather-forecast-hourly"><i class="wi wi-owm-day-500"></i></div>
+        </div>
+        <div class="box">
+            <div class="weather-forecast-hourly">20:00</div>
+            <div class="weather-forecast-hourly">1°</div>
+            <div class="weather-forecast-hourly"><i class="wi wi-owm-day-500"></i></div>
+        </div>
+    </div>
+    <!-- Transit and Weather Forcast Daily -->
+    <div class="container transit-weather">
+        <div class="box transit">
+            <div>Abfahrten</div>
+            <div id="departures">
+                <div class="container border">
+                    <div class="box box-one">U6</div>
+                    <div class="box box-two">Hauptbahnhof</div>
+                    <div class="box box-three">16:03</div>
+                </div>
+                <div class="container border">
+                    <div class="box box-one">U6</div>
+                    <div class="box box-two">Hauptbahnhof</div>
+                    <div class="box box-three">16:03</div>
+                </div>
+                <div class="container border">
+                    <div class="box box-one">U6</div>
+                    <div class="box box-two">Hauptbahnhof</div>
+                    <div class="box box-three">16:03</div>
+                </div>
+                <div class="container border">
+                    <div class="box box-one">U6</div>
+                    <div class="box box-two">Hauptbahnhof</div>
+                    <div class="box box-three">16:03</div>
+                </div>
+                <div class="container border">
+                    <div class="box box-one">U6</div>
+                    <div class="box box-two">Hauptbahnhof</div>
+                    <div class="box box-three">16:03</div>
+                </div>
+            </div>
+        </div>
+        <div class="box weather-forecast">
+            <div>Wettervorhersage</div>
+            <div id="weather-forecast-daily">
+                <div class="container border">
+                    <div class="box">Mo</div>
+                    <div class="box"><i class="wi wi-owm-day-500"></i></div>
+                    <div class="box">-1</div>
+                    <div class="box">8</div>
+                </div>
+                <div class="container border">
+                    <div class="box">Di</div>
+                    <div class="box"><i class="wi wi-owm-day-500"></i></div>
+                    <div class="box">-1</div>
+                    <div class="box">8</div>
+                </div>
+                <div class="container border">
+                    <div class="box">Mi</div>
+                    <div class="box"><i class="wi wi-owm-day-500"></i></div>
+                    <div class="box">-1</div>
+                    <div class="box">8</div>
+                </div>
+                <div class="container border">
+                    <div class="box">Do</div>
+                    <div class="box"><i class="wi wi-owm-day-500"></i></div>
+                    <div class="box">-1</div>
+                    <div class="box">8</div>
+                </div>
+                <div class="container border">
+                    <div class="box">Fr</div>
+                    <div class="box"><i class="wi wi-owm-day-500"></i></div>
+                    <div class="box">-1</div>
+                    <div class="box">8</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Message of the Day -->
+    <div class="container compliment">
+        <div id="compliment" class="box center">Message of the day</div>
+    </div>
+    <!-- Message of the Day -->
+    <div class="container">
+        <div class="box center" id="news1"></div>
+        <div class="box center" id="news2"></div>
+        <div class="box center"></div>
+        <div class="box center"></div>
+    </div>  
+
+
+    <!-- Update Scripts -->
+    <script src="/static/js/update_date.js"></script>
+    <script src="/static/js/update_departures.js"></script>
+    <script src="/static/js/update_time.js"></script>
+    <script src="/static/js/update_weather.js"></script>
+    <script src="/static/js/update_compliments.js"></script>
+</body>
+</html>

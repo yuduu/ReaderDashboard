@@ -4,8 +4,8 @@ html {
   overflow: hidden;
   font-size: 1.75rem; /* Adjust the base font size as needed */
   max-width: 100%; /* Allow the content to adjust based on the screen width */
- /* max-height: 1448px;
-  max-width: 1072px;*/
+  max-height: 1268px;
+  max-width: 1072px;
 }
 
 body {

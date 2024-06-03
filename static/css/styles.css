@@ -2,17 +2,16 @@
 
 html {
   overflow: hidden;
-  font-size: 1.75rem; /* Adjust the base font size as needed */
+  font-size: 1rem; /* Base font size */
   max-width: 100%; /* Allow the content to adjust based on the screen width */
-  max-height: 1268px;
-  max-width: 1072px;
+  max-height: 100vh; /* Use viewport height for flexibility */
 }
 
 body {
-  margin: 3rem; /* Use relative units for margin */
+  margin: 1.5rem; /* Use relative units for margin */
   font-family: "Roboto", sans-serif; /* Use Roboto font with sans-serif as fallback */
   font-weight: 400;
-  font-size: 1.25rem; /* Use relative units for font size */
+  font-size: 1rem; /* Use relative units for font size */
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -22,10 +21,11 @@ body {
   flex-direction: row;
   align-items: stretch;
   justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-.transit-weather{
-  justify-content: none
+.transit-weather {
+  justify-content: flex-start;
 }
 
 .center {
@@ -45,74 +45,86 @@ body {
   border: 1px solid black;
 }
 
-.weather-forecast{
-  flex: 0 0 25%;
+.weather-forecast {
+  flex: 1 1 25%; /* Flexible width with a base size */
 }
 
-.transit{
-  flex: 2;
+.transit {
+  flex: 2 1 auto; /* Flexible width with base size adjusting automatically */
 }
 
 /* Sections */
 
 /* Date & Time */
 #current-date {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1.225;
 }
 
 #current-time {
-  font-size: 3.25rem;
+  font-size: 2rem;
   line-height: 1;
   font-weight: bold;
 }
 
 /* Current Weather */
 #current-weather {
-  font-size: 3.25rem;
+  font-size: 2rem;
 }
 
-.forecast-box{
-  flex: 0 0 25%;
+.forecast-box {
+  flex: 1 1 25%; /* Flexible width with a base size */
 }
-
-/* Weather Forecast hourly */
-
-/* Weather Forecast daily */
 
 /* Transit */
-.box-one {
-  flex: 0 0 15%; /* Each small box takes 15% of the container width */
-  font-size: 1.15rem;  /*Adjust font size based on viewport width */
+.box-one, .box-two, .box-three {
+  font-size: 1rem; /* Adjust font size based on viewport width */
   overflow: hidden; /* Ensure content doesn't overflow */
   text-overflow: ellipsis; /* Add ellipsis if content overflows */
   white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.box-one {
+  flex: 1 1 15%; /* Flexible width with a base size */
   text-align: left;
 }
+
 .box-two {
-  flex: 1; /* Middle box takes the remaining space */
-  font-size: 1.15rem;  /*Adjust font size based on viewport width */
-  white-space: nowrap; /* Prevent text from wrapping */
-  overflow: hidden; /* Ensure content doesn't overflow */
-  text-overflow: ellipsis; /* Add ellipsis if content overflows */
+  flex: 2 1 auto; /* Flexible width with base size adjusting automatically */
   text-align: left;
 }
 
 .box-three {
-  flex: 0 0 20%; /* Each small box takes 15% of the container width */
-  font-size: 1.15rem;  /*Adjust font size based on viewport width */
-  overflow: hidden; /* Ensure content doesn't overflow */
-  text-overflow: ellipsis; /* Add ellipsis if content overflows */
-  white-space: nowrap; /* Prevent text from wrapping */
+  flex: 1 1 20%; /* Flexible width with a base size */
   text-align: right;
 }
 
-.compliment{
+.compliment {
   justify-content: center;
 }
 
 /* Compliments */
 #compliment {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  body {
+    margin: 1rem;
+    font-size: 0.875rem;
+  }
+
+  #current-time {
+    font-size: 1.5rem;
+  }
+
+  #current-weather, #compliment {
+    font-size: 1.5rem;
+  }
+
+  .box-one, .box-two, .box-three {
+    font-size: 0.875rem;
+  }
 }

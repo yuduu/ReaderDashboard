@@ -2,7 +2,7 @@
 
 html {
   overflow: hidden;
-  font-size: 1rem; /* Base font size */
+  font-size: 1.5rem; /* Base font size */
   max-width: 100%; /* Allow the content to adjust based on the screen width */
   max-height: 100vh; /* Use viewport height for flexibility */
 }
@@ -46,7 +46,7 @@ body {
 }
 
 .weather-forecast {
-  flex: 1 1 25%; /* Flexible width with a base size */
+  flex: 1 1 1; /* Flexible width with a base size */
 }
 
 .transit {
@@ -73,7 +73,7 @@ body {
 }
 
 .forecast-box {
-  flex: 1 1 25%; /* Flexible width with a base size */
+  flex: 1 1 1; /* Flexible width with a base size */
 }
 
 /* Transit */
@@ -85,7 +85,7 @@ body {
 }
 
 .box-one {
-  flex: 1 1 15%; /* Flexible width with a base size */
+  flex: 1 1 1; /* Flexible width with a base size */
   text-align: left;
 }
 
@@ -95,7 +95,7 @@ body {
 }
 
 .box-three {
-  flex: 1 1 20%; /* Flexible width with a base size */
+  flex: 1 1 1; /* Flexible width with a base size */
   text-align: right;
 }
 

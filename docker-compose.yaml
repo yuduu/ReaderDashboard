@@ -2,6 +2,7 @@ services:
   clock-server:
     image: python:alpine
     working_dir: /clock
+    restart: unless-stopped
     env_file:
       - env
     ports:

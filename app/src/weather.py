@@ -23,7 +23,7 @@ def get_weather():
     lang = os.getenv('WEATHER_LANG', 'de')
 
     tz = pytz.timezone('Europe/Berlin')
-    url = 'https://api.openweathermap.org/data/2.5/onecall'
+    url = 'https://api.openweathermap.org/data/3.0/onecall'
     params = {
         'appid': appid,
         'lat': lat,

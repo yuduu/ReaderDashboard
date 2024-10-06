@@ -1,10 +1,10 @@
 from fastapi import FastAPI, Request, Response
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse, PlainTextResponse
+from fastapi.responses import HTMLResponse, PlainTextResponse, StreamingResponse
 from datetime import datetime
 from babel.dates import format_datetime
-from app.src.weather import get_weather, get_current_weather, get_hourly_weather, get_daily_weather
+from app.src.weather import get_weather, get_current_weather, get_hourly_weather, get_daily_weather, get_weather_graph
 from app.src.compliments import select_random_compliment
 from app.src.transit import get_departure_html
 
@@ -55,11 +55,15 @@ async def get_hourly_weather_data():
     hourly_weather = get_hourly_weather()
     return hourly_weather
 
-
 @app.get("/weather-daily", response_class=HTMLResponse)
 async def get_daily_weather_data():
     daily_weather = get_daily_weather()
     return daily_weather
+
+@app.get("/weather-graph", response_class=StreamingResponse)
+async def get_weather_graph_png():
+    weather_graph = get_weather_graph()
+    return StreamingResponse(weather_graph, media_type='image/png')
 
 @app.get("/compliment", response_class=HTMLResponse)
 async def get_compliment_data():

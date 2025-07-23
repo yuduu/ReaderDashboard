@@ -1,17 +1,20 @@
 import random
 
-def select_random_compliment(file_path):
+# Preloaded compliments for reduced I/O
+preloaded_compliments = []
+
+with open("app/src/util/compliments.txt", 'r') as file:
+    preloaded_compliments = [line.strip() for line in file]
+
+def select_random_compliment():
     try:
-        with open(file_path, 'r') as file:
-            compliments = file.readlines()
-            compliment = random.choice(compliments)
-            return compliment.strip()  # Remove any leading/trailing whitespace
-    except FileNotFoundError:
-        print("Error: File not found.")
+        return random.choice(preloaded_compliments)
+    except IndexError:
+        print("No compliments loaded.")
+        return ""
 
 if __name__ == "__main__":
-    compliments_file = "app/src/util/compliments.txt"
-    selected_compliment = select_random_compliment(compliments_file)
+    selected_compliment = select_random_compliment()
     if selected_compliment:
         print("Here's your random compliment:")
         print(selected_compliment)
